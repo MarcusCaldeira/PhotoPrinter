@@ -3,6 +3,7 @@ package com.example.PhotoPrinter.models;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Date;
 
 
 public class AppUser {
@@ -17,8 +18,8 @@ public class AppUser {
     private String bio;
     private Date createddate;
     private Set<UserRole> userroles = new HashSet<>();
-    private List<Collection> usercollection = new HashSet<>();
-    private List<Photo> userphotos = new HashSet<>();
+    private List<Collection> collections;
+    private List<Photo> userphotos;
 
 
 }
