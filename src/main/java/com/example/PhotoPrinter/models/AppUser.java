@@ -22,6 +22,8 @@ public class AppUser {
     private List<Photo> userphotos;
 
 
+    public AppUser() { }
+
     public AppUser(Integer id, String firstname, String lastname, String adress,
                    String username, String password, String email, String location,
                    String bio, Date createddate, Set<UserRole> userroles,
