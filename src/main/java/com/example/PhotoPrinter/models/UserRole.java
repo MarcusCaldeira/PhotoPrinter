@@ -1,4 +1,4 @@
 package com.example.PhotoPrinter.models;
 
-public class User {
+public class UserRole {
 }
