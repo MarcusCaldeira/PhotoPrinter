@@ -22,4 +22,22 @@ public class AppUser {
     private List<Photo> userphotos;
 
 
+    public AppUser(Integer id, String firstname, String lastname, String adress,
+                   String username, String password, String email, String location,
+                   String bio, Date createddate, Set<UserRole> userroles,
+                   List<Collection> collections, List<Photo> userphotos) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.adress = adress;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.location = location;
+        this.bio = bio;
+        this.createddate = createddate;
+        this.userroles = userroles;
+        this.collections = collections;
+        this.userphotos = userphotos;
+    }
 }
