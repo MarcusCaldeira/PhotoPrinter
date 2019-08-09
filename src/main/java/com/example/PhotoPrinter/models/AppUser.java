@@ -1,6 +1,6 @@
 package com.example.PhotoPrinter.models;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
@@ -9,18 +9,31 @@ import java.util.Date;
 //This will turn the class into an entity in the database.
 @Entity
 public class AppUser {
+    //will turn that into the ID(from javax.persistence)
+    @Id
+    //This generates based on the database being used.
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String firstname;
     private String lastname;
     private String adress;
+    //This is saying we want Usernames to be unique.
+    @Column(unique = true)
     private String username;
     private String password;
     private String email;
     private String location;
+    //This sets it so that you can have as much text as you want it to in the DB.
+    @Column(columnDefinition = "text")
     private String bio;
     private Date createddate;
+    /*Meaning One user can have many user roles. Cascade is what happens is the User does something-If deleted, then all gets deleted.
+    Fetch means how we want to load the user.*/
+    @OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<UserRole> userroles = new HashSet<>();
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Collection> collections;
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Photo> userphotos;
 
 
