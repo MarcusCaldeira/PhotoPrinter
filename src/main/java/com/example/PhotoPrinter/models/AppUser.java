@@ -1,11 +1,13 @@
 package com.example.PhotoPrinter.models;
 
+import javax.persistence.Entity;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Date;
 
-
+//This will turn the class into an entity in the database.
+@Entity
 public class AppUser {
     private Integer id;
     private String firstname;
